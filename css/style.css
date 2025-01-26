@@ -89,8 +89,8 @@ address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit; }
-.center {
-    text-align: center; /* For text alignment 
+  .center {
+    text-align: center; 
   }
 ol,
 ul,

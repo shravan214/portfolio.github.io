@@ -1343,6 +1343,73 @@ pre {
     margin-left: 83.33333%; }
   .offset-xl-11 {
     margin-left: 91.66667%; } }
+    .certifications-container {
+      display: flex;
+      flex-wrap: wrap; /* Allows wrapping to the next line */
+      justify-content: space-between; /* Space between boxes */
+  }
+  
+
+  .certifications-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content: center; /* Center the boxes in the container */
+    gap: 20px; /* Space between boxes (adjust as needed) */
+}
+
+.certification-box {
+    background: rgba(255, 255, 255, 0.1); /* Match the background color */
+    padding: 20px; /* Inner spacing */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center align items horizontally */
+    justify-content: center; /* Center align items vertically */
+    text-align: center; /* Center text */
+    height: auto; /* Allow height to adjust based on content */
+    max-width: 300px; /* Set a maximum width for the boxes */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+}
+
+.certification-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.certification-logo {
+    max-width: 70%; /* Responsive logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below the logo (reduced) */
+}
+
+.date {
+    font-weight: 500; /* Bold font weight */
+    font-size: 20px; /* Adjusted font size */
+    color: #ffc107; /* Replace with your primary color variable */
+}
+
+h2 {
+    font-size: 20px; /* Adjusted font size */
+}
+
+.position {
+    font-size: 12px; /* Font size for position */
+    font-weight: 600; /* Semi-bold font weight */
+    letter-spacing: 3px; /* Letter spacing */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+.verify-link {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.verify-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
 
 .table {
   width: 100%;

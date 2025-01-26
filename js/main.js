@@ -41,7 +41,6 @@
    $.Scrollax();
 
 
-
    // Burger Menu
 	var burgerMenu = function() {
 
@@ -201,6 +200,53 @@
 	}
 	counter();
 
+	var scrollWindow = function() {
+		$(window).scroll(function(){
+			var $w = $(this),
+				st = $w.scrollTop(),
+				navbar = $('.ftco_navbar'),
+				sd = $('.js-scroll-wrap');
+	
+			// Navbar scroll effects
+			if (st > 150) {
+				if (!navbar.hasClass('scrolled')) {
+					navbar.addClass('scrolled');	
+				}
+			} 
+			if (st < 150) {
+				if (navbar.hasClass('scrolled')) {
+					navbar.removeClass('scrolled sleep');
+				}
+			} 
+			if (st > 350) {
+				if (!navbar.hasClass('awake')) {
+					navbar.addClass('awake');	
+				}
+				if (sd.length > 0) {
+					sd.addClass('sleep');
+				}
+			}
+			if (st < 350) {
+				if (navbar.hasClass('awake')) {
+					navbar.removeClass('awake');
+					navbar.addClass('sleep');
+				}
+				if (sd.length > 0) {
+					sd.removeClass('sleep');
+				}
+			}
+	
+			// Certification boxes animation
+			$('.certification-box').each(function() {
+				var boxOffset = $(this).offset().top;
+				var windowHeight = $w.height();
+				if (boxOffset < (st + windowHeight - 100)) { // Trigger when box is near the viewport
+					$(this).addClass('visible'); // Add the visible class to animate
+				}
+			});
+		});
+	};
+	scrollWindow();
 
 	var contentWayPoint = function() {
 		var i = 0;

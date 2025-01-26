@@ -1358,6 +1358,7 @@ pre {
 }
 
 .certification-box {
+
     background: rgba(255, 255, 255, 0.1); /* Match the background color */
     padding: 20px; /* Inner spacing */
     border-radius: 5px; /* Rounded corners */
@@ -1408,7 +1409,16 @@ h2 {
 .verify-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
+.ftco-animated {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade and slide */
+}
 
+.ftco-animated.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
 
 
 .table {

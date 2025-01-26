@@ -1,7 +1,9 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide'
- });
+AOS.init({
+	duration: 800,
+	easing: 'ease-in-out',
+	once: true,
+  });
+  
 
 (function($) {
 
@@ -280,7 +282,7 @@
 				
 			}
 
-		} , { offset: '95%' } );
+		} , { offset: '80%' } );
 	};
 	contentWayPoint();
 

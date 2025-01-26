@@ -9872,3 +9872,9 @@ h3 {
   input:checked + .slider:before {
       transform: translateX(26px);
   }
+  @media (max-width: 600px) {
+    theme-switch {
+      width: 48px;
+      padding: 6px;
+    }
+  }

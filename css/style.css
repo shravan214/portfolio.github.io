@@ -89,9 +89,7 @@ address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit; }
-  .center {
-    text-align: center; 
-  }
+
 ol,
 ul,
 dl {
@@ -1387,8 +1385,8 @@ pre {
 }
 
 .date {
-    font-weight: 500; /* Bold font weight */
-    font-size: 20px; /* Adjusted font size */
+    font-weight: 300; /* Bold font weight */
+    font-size: 15px; /* Adjusted font size */
     color: #ffc107; /* Replace with your primary color variable */
 }
 
@@ -9826,6 +9824,4 @@ h3 {
     text-decoration: underline;
 }
 
-
-/*Button*/
 

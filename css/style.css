@@ -89,7 +89,9 @@ address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit; }
-
+.center {
+    text-align: center; /* For text alignment 
+  }
 ol,
 ul,
 dl {
@@ -9825,5 +9827,5 @@ h3 {
 }
 
 
-/*Button
+/*Button*/
 

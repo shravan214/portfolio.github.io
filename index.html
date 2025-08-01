@@ -25,6 +25,170 @@
 
 
 <style>
+/* Enhanced Button Styles */
+.btn-primary {
+  background: linear-gradient(45deg, #ffbd39, #ff0080);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 189, 57, 0.3);
+  z-index: 1;
+}
+
+.btn-primary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff0080, #ffbd39);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover:before {
+  left: 0;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 0, 128, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Verify Link Animation */
+.verify-link {
+  color: #ffbd39;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.verify-link:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #ffbd39, #ff0080);
+  transition: width 0.3s ease;
+}
+
+.verify-link:hover:before {
+  width: 100%;
+}
+
+.verify-link:hover {
+  color: #ff0080;
+  text-shadow: 0 0 8px rgba(255, 189, 57, 0.3);
+}
+
+/* Nav Link Hover Effect */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #ffbd39, #ff0080);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover:before {
+  width: 100%;
+}
+
+/* Social Media Icons Animation */
+.ftco-footer-social a {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ffbd39, #ff0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.ftco-footer-social a:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 5px 15px rgba(255, 189, 57, 0.5);
+}
+
+.ftco-footer-social a:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffbd39, #ff0080);
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.ftco-footer-social a:hover:before {
+  opacity: 0.2;
+  transform: scale(1.2);
+}
+
+.ftco-footer-social li a {
+  float: none;
+}
+
+/* Download CV Button Special Effect */
+.btn-cv {
+  position: relative;
+  background: linear-gradient(45deg, #ffbd39, #ff0080);
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-cv:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff0080, #ffbd39);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-cv:hover:before {
+  opacity: 1;
+}
+
+.btn-cv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 0, 128, 0.3);
+}
+
+.btn-cv span {
+  position: relative;
+  z-index: 1;
+}
 
 /*======================================
 //--//-->   ABOUT
@@ -56,6 +220,158 @@
   background-color: #ffbd39;
 }
 
+/* Education Card Styles */
+.resume-wrap {
+  --background: linear-gradient(to left, #ffbd39 0%, #ff0080 100%);
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+  background: var(--background);
+}
+
+.resume-wrap::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: var(--background);
+  transition: opacity .5s;
+}
+
+.resume-wrap > div {
+  background: white;
+  color: #181818;
+  overflow: visible;
+  border-radius: .7rem;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.resume-wrap:hover::after {
+  opacity: 0;
+}
+
+.resume-wrap:hover {
+  transform: translateY(-5px);
+}
+
+.resume-wrap h2 {
+  font-weight: bold;
+  letter-spacing: .1em;
+  color: #181818;
+}
+
+/* Card styles for all sections */
+.card {
+  --background: linear-gradient(to left, #ffbd39 0%, #ff0080 100%);
+  width: 300px;
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: visible;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+  margin: 15px;
+  transition: transform 0.3s ease;
+  display: flex;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: var(--background);
+  transition: opacity .5s;
+}
+
+.card-info {
+  --color: #181818;
+  background: white;
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  overflow: visible;
+  border-radius: .7rem;
+  padding: 25px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card .title {
+  color: #000000;
+  font-weight: bold;
+  min-height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .date, .membership-box .position, .activity-box .position {
+  color: #666;
+  margin: 10px 0;
+}
+
+.card .verify-link {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.card:hover, .membership-box:hover, .activity-box:hover {
+  transform: translateY(-5px);
+}
+
+.card::after, .membership-box::after, .activity-box::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: var(--background);
+  transition: opacity .5s;
+}
+
+.card:hover::after, .membership-box:hover::after, .activity-box:hover::after {
+  opacity: 0;
+}
+
+.card:hover .card-info, .membership-box:hover, .activity-box:hover {
+  color: #181818;
+  transition: color 1s;
+}
+
+/* Shared image styles */
+.membership-box img, .activity-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
 
 /* Animation styles */
 #typing-animation {
@@ -109,6 +425,105 @@
   transform: scale(1.1);
 }
 
+/* Counter Box Styles */
+.block-18.resume-wrap {
+  --background: linear-gradient(to left, #ffbd39 0%, #ff0080 100%);
+  padding: 5px;
+  width: 220px;
+  margin: 10px;
+  border-radius: 1rem;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  background: var(--background);
+  transition: transform 0.3s ease;
+}
+
+.block-18.resume-wrap::after {
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: var(--background);
+  transition: opacity .5s;
+}
+
+.block-18.resume-wrap > div {
+  background: white;
+  color: #181818;
+  border-radius: .7rem;
+  padding: 25px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.block-18.resume-wrap:hover {
+  transform: translateY(-5px);
+}
+
+.block-18.resume-wrap:hover::after {
+  opacity: 0;
+}
+
+.block-18.resume-wrap .number {
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.block-18.resume-wrap span:not(.number) {
+  font-size: 16px;
+  color: #666;
+  display: block;
+}
+
+/* Profile Image Shining Border Effect */
+.about-img img {
+  position: relative;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.about-img {
+  position: relative;
+  display: inline-block;
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  background: #ffbd39;
+  z-index: 0;
+  border-radius: 50%;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 </style>
 
@@ -312,56 +727,67 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate experience-equal">
-						<span class="date">July 2025 - October 2025</span>
-						<h2>Research Intern</h2>
-						<span class="position">Progenius Pavement Solutions</span>
-						<ul>
-							<li>Led the development of a low-cost Light Weight Deflectometer (LWD) as part of an industry-funded research project focused on flexible pavement evaluation.</li>
-							<li>Evaluated commercial LWD applications for assessing compaction quality of asphalt layers and granular bases.</li>
-							<li>Prototyped essential components, including drop weight and loading plate, to achieve desired response for flexible pavements.</li>
-							<li>Configured sensors and microcontrollers to record surface deflection during tests, implementing code for data processing.</li>
-						</ul>
+						<div>
+							<span class="date">July 2025 - October 2025</span>
+							<h2>Research Intern</h2>
+							<span class="position">Progenius Pavement Solutions</span>
+							<ul>
+								<li>Led the development of a low-cost Light Weight Deflectometer (LWD) as part of an industry-funded research project focused on flexible pavement evaluation.</li>
+								<li>Evaluated commercial LWD applications for assessing compaction quality of asphalt layers and granular bases.</li>
+								<li>Prototyped essential components, including drop weight and loading plate, to achieve desired response for flexible pavements.</li>
+								<li>Configured sensors and microcontrollers to record surface deflection during tests, implementing code for data processing.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate experience-equal">
-						<span class="date">May 2025-June 2025</span>
-						<h2>Site Intern</h2>
-						<span class="position">Badhekar Group</span>
-						<ul>
-							<li>Reading structural drawings and verifying their on-site execution, particularly reinforcement detailing and layout accuracy.</li>
-							<li>Preparing Bar Bending Schedules (BBS) and estimating material quantities — including tiles and concrete — for various structural and finishing works.</li>
-							<li>Gaining hands-on experience in reinforcement placement, formwork, concreting, and quality checking procedures.</li>
-							<li>Understanding the fundamentals of site layout, material management, safety practices, and coordination between engineers and contractors.</li>
-						</ul>
+						<div>
+							<span class="date">May 2025-June 2025</span>
+							<h2>Site Intern</h2>
+							<span class="position">Badhekar Group</span>
+							<ul>
+								<li>Reading structural drawings and verifying their on-site execution, particularly reinforcement detailing and layout accuracy.</li>
+								<li>Preparing Bar Bending Schedules (BBS) and estimating material quantities — including tiles and concrete — for various structural and finishing works.</li>
+								<li>Gaining hands-on experience in reinforcement placement, formwork, concreting, and quality checking procedures.</li>
+								<li>Understanding the fundamentals of site layout, material management, safety practices, and coordination between engineers and contractors.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate experience-equal">
-						<span class="date">August 2024-January 2025</span>
-						<h2>Industrial Trainee</h2>
-						<span class="position">Credai Pune Metro</span>
-						<ul>
-							<li>Gained hands-on experience in high-rise construction and wastewater treatment.</li>
-							<li>Assisted with setting up site operations and coordinating with various teams.</li>
-							<li>Contributed to understanding construction practices and applied industry standards in real projects.</li>
-							<li>Participated in site inspections and ensured compliance with safety standards.</li>
-						</ul>
+						<div>
+							<span class="date">August 2024-January 2025</span>
+							<h2>Industrial Trainee</h2>
+							<span class="position">Credai Pune Metro</span>
+							<ul>
+								<li>Gained hands-on experience in high-rise construction and wastewater treatment.</li>
+								<li>Assisted with setting up site operations and coordinating with various teams.</li>
+								<li>Contributed to understanding construction practices and applied industry standards in real projects.</li>
+								<li>Participated in site inspections and ensured compliance with safety standards.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate experience-equal">
-						<span class="date">May 2024-June 2024</span> 
-						<h2>Site Intern</h2>
-						<span class="position">GN Construction</span>
-						<ul>
-							<li>Worked on-site to learn the practical application of civil engineering principles.</li>
-							<li>Assisted in supervising construction progress and ensuring quality control.</li>
-							<li>Participated in project meetings, reporting on site progress and challenges.</li>
-							<li>Helped manage construction documentation and material tracking.</li>
-						</ul>
+						<div>
+							<span class="date">May 2024-June 2024</span> 
+							<h2>Site Intern</h2>
+							<span class="position">GN Construction</span>
+							<ul>
+								<li>Worked on-site to learn the practical application of civil engineering principles.</li>
+								<li>Assisted in supervising construction progress and ensuring quality control.</li>
+								<li>Participated in project meetings, reporting on site progress and challenges.</li>
+								<li>Helped manage construction documentation and material tracking.</li>
+								<br>
+								<br>
+								<br>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -376,38 +802,51 @@
 			</div>
 			<br>
 			<div class="row justify-content-center"> 
-				<div class="col-md-12"> <div class="certifications-container">
-						<div class="certification-box ftco-animate">
-							<img src="images/certification_1.png" alt="Course Logo 1" class="certification-logo">
-							<h2>AutoCAD Essential Training</h2>
-							<span class="date">Completed: September 2024</span>
-							<p><a href="https://www.linkedin.com/learning/certificates/c151e4fcbfcc727d2190f5012bdbaa1fdb6296434c9f1afd127ef5a0eb56492a?u=126888530" class="verify-link" target="_blank">Verify</a></p>
+				<div class="col-md-12">
+					<div class="certifications-container d-flex flex-wrap justify-content-center">
+						<div class="card ftco-animate">
+							<div class="card-info">
+								<img src="images/certification_1.png" alt="Course Logo 1" class="certification-logo mb-3">
+								<h2 class="title">AutoCAD Essential Training</h2>
+								<span class="date">Completed: September 2024</span>
+								<a href="https://www.linkedin.com/learning/certificates/c151e4fcbfcc727d2190f5012bdbaa1fdb6296434c9f1afd127ef5a0eb56492a?u=126888530" class="verify-link" target="_blank">Verify</a>
+							</div>
 						</div>
 						
-						<div class="certification-box ftco-animate">
-							<img src="images/certification_2.png" alt="Course Logo 2" class="certification-logo">
-							<h2>Project Management Foundations</h2>
-							<span class="date">Completed: December 2024</span>
-							<p><a href="https://www.linkedin.com/learning/certificates/9f7424cbbfe6e3a9257fb3f82cd3cf0b4e91a21eb3f3ccaa09b2c4e9fbd3aef2?trk=share_certificate" class="verify-link" target="_blank">Verify</a></p>
+						<div class="card ftco-animate">
+							<div class="card-info">
+								<img src="images/certification_2.png" alt="Course Logo 2" class="certification-logo mb-3">
+								<h2 class="title">Project Management Foundations</h2>
+								<span class="date">Completed: December 2024</span>
+								<a href="https://www.linkedin.com/learning/certificates/9f7424cbbfe6e3a9257fb3f82cd3cf0b4e91a21eb3f3ccaa09b2c4e9fbd3aef2?trk=share_certificate" class="verify-link" target="_blank">Verify</a>
+							</div>
 						</div>
 						
-						<div class="certification-box ftco-animate">
-							<img src="images/certification_1.png" alt="Course Logo 3" class="certification-logo">
-							<h2>Revit 2025 Essential Training for Structure (Imperial and Metric)</h2>
-							<span class="date">Completed: December 2024</span>
-							<p><a href="https://www.linkedin.com/learning/certificates/9f7424cbbfe6e3a92557fb3f82cd3cf0b4e91a21eb3f3ccaa09b2c4e9fbd3aef2?trk=share_certificate" class="verify-link" target="_blank">Verify</a></p>
+						<div class="card ftco-animate">
+							<div class="card-info">
+								<img src="images/certification_1.png" alt="Course Logo 3" class="certification-logo mb-3">
+								<h2 class="title">Revit 2025 Essential Training</h2>
+								<span class="date">Completed: December 2024</span>
+								<a href="https://www.linkedin.com/learning/certificates/9f7424cbbfe6e3a92557fb3f82cd3cf0b4e91a21eb3f3ccaa09b2c4e9fbd3aef2?trk=share_certificate" class="verify-link" target="_blank">Verify</a>
+							</div>
 						</div>
-						<div class="certification-box ftco-animate">
-							<img src="images/certification_3.png" alt="PMI Logo" class="certification-logo">
-							<h2>Microsoft Project 2019 Essential Training</h2>
-							<span class="date">Jun 2025 - Jul 2025</span>
-							<p><a href="https://www.linkedin.com/learning/certificates/9f7424cbbfe6e3a92557fb3f82cd3cf0b4e91a21eb3f3ccaa09b2c4e9fbd3aef2?trk=share_certificate" class="verify-link" target="_blank">Verify</a></p>
+						
+						<div class="card ftco-animate">
+							<div class="card-info">
+								<img src="images/certification_3.png" alt="PMI Logo" class="certification-logo mb-3">
+								<h2 class="title">Microsoft Project 2019 Essential Training</h2>
+								<span class="date">Jun 2025 - Jul 2025</span>
+								<a href="https://www.linkedin.com/learning/certificates/9f7424cbbfe6e3a92557fb3f82cd3cf0b4e91a21eb3f3ccaa09b2c4e9fbd3aef2?trk=share_certificate" class="verify-link" target="_blank">Verify</a>
+							</div>
 						</div>
-						<div class="certification-box ftco-animate">
-							<img src="images/certification_2.png" alt="PMI Logo" class="certification-logo">
-							<h2>Construction Management: Planning and Scheduling</h2>
-							<span class="date">Jun 2025 - Jul 2025</span>
-							<p><a href="https://www.linkedin.com/learning/certificates/80c8c1180d9d3b8660635f481b09a31fe3afdcb7be144f3a7ac89839969ab493?trk=share_certificate" class="verify-link" target="_blank">Verify</a></p>
+						
+						<div class="card ftco-animate">
+							<div class="card-info">
+								<img src="images/certification_2.png" alt="PMI Logo" class="certification-logo mb-3">
+								<h2 class="title">Construction Management: Planning & Scheduling</h2>
+								<span class="date">Jun 2025 - Jul 2025</span>
+								<a href="https://www.linkedin.com/learning/certificates/80c8c1180d9d3b8660635f481b09a31fe3afdcb7be144f3a7ac89839969ab493?trk=share_certificate" class="verify-link" target="_blank">Verify</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -424,18 +863,22 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
-						<span class="date">2022-2026</span>
-						<h2>B.Tech Civil Engineering</h2>
-						<span class="position">Vishwakarma Institute of Information Technology</span>
-						<p class="mt-4">CGPA: 8.09</p>
+						<div>
+							<span class="date">2022-2026</span>
+							<h2>B.Tech Civil Engineering</h2>
+							<span class="position">Vishwakarma Institute of Information Technology</span>
+							<p class="mt-4">CGPA: 8.09</p>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
-						<span class="date">2020-2022</span>
-						<h2>Higher School</h2>
-						<span class="position">Crescent High School & Junior College</span>
-						<p class="mt-4">Percentage: 82.17%</p>
+						<div>
+							<span class="date">2020-2022</span>
+							<h2>Higher School</h2>
+							<span class="position">Crescent High School & Junior College</span>
+							<p class="mt-4">Percentage: 82.17%</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -443,10 +886,12 @@
 			<div class="row justify-content-center"> 
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
-						<span class="date">2010-2020</span>
-						<h2>Primary and Secondary School</h2>
-						<span class="position">Crescent High School & Junior College</span>
-						<p class="mt-4">Percentage: 89.80%</p>
+						<div>
+							<span class="date">2010-2020</span>
+							<h2>Primary and Secondary School</h2>
+							<span class="position">Crescent High School & Junior College</span>
+							<p class="mt-4">Percentage: 89.80%</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -458,32 +903,38 @@
     </section>
 	<br>
 
-    <!-- Memberships Section -->
-    <section>
-      <div class="row">
-        <h1 class="big-4">Memberships</h1>
-        <div class="underline"></div>
-      </div>
-      <br>
-      <div class="membership-container">
-        <div class="membership-box ftco-animate text-center">
-          <img src="images/asce_logo.svg" alt="ASCE Logo">
-          <h2>American Society of Civil Engineers (ASCE)</h2>
-          <span class="position">Student Member</span>
+      <!-- Memberships Section -->
+      <section>
+        <div class="row">
+          <h1 class="big-4">Memberships</h1>
+          <div class="underline"></div>
         </div>
-        <div class="membership-box ftco-animate text-center">
-          <img src="images/ici_logo.jpg" alt="ICI Logo">
-          <h2>Indian Concrete Institute (ICI)</h2>
-          <span class="position">Student Member</span>
+        <br>
+        <div class="activities-container d-flex flex-wrap justify-content-center">
+          <div class="card ftco-animate">
+            <div class="card-info">
+              <img src="images/asce_logo.svg" alt="ASCE Logo" class="activity-logo mb-3">
+              <h2 class="title">American Society of Civil Engineers (ASCE)</h2>
+              <span class="position">Student Member</span>
+            </div>
+          </div>
+          <div class="card ftco-animate">
+            <div class="card-info">
+              <img src="images/ici_logo.jpg" alt="ICI Logo" class="activity-logo mb-3">
+              <h2 class="title">Indian Concrete Institute (ICI)</h2>
+              <span class="position">Student Member</span>
+            </div>
+          </div>
+          <div class="card ftco-animate">
+            <div class="card-info">
+              <img src="images/syc_logo.png" alt="SYC Logo" class="activity-logo mb-3">
+              <h2 class="title">The Social Youth Club, Pune</h2>
+              <span class="position">Member</span>
+            </div>
+          </div>
         </div>
-        <div class="membership-box ftco-animate text-center">
-          <img src="images/syc_logo.png" alt="SYC Logo">
-          <h2>The Social Youth Club, Pune</h2>
-          <span class="position">Member</span>
-        </div>
-      </div>
-      <br>
-    </section>
+        <br>
+      </section>
 
 	<section>
 			<div class="row">
@@ -491,27 +942,34 @@
 				<div class="underline"></div>
 			</div>
 			<br>
-			<div class="activities-container">
-				<div class="activity-box ftco-animate text-center">
-					<img src="images/iccms_logo.png" alt="ICCMS Logo" class="activity-logo">
-					<h2> ICCMS 2025</h2>
-					<h2>IIT Tirupati</h2>
-					<span class="position">Research Presenter</span>
+			<div class="activities-container d-flex flex-wrap justify-content-center">
+				<div class="card ftco-animate">
+					<div class="card-info">
+						<img src="images/iccms_logo.png" alt="ICCMS Logo" class="activity-logo mb-3">
+						<h2 class="title">ICCMS 2025 - IIT Tirupati</h2>
+						<span class="position">Research Presenter</span>
+					</div>
 				</div>
-				<div class="activity-box ftco-animate text-center">
-					<img src="images/constro_logo.svg" alt="CONSTRO Logo" class="activity-logo">
-					<h2>Constro International Exhibition 2025</h2>
-					<span class="position">Exhibitor</span>
+				<div class="card ftco-animate">
+					<div class="card-info">
+						<img src="images/constro_logo.svg" alt="CONSTRO Logo" class="activity-logo mb-3">
+						<h2 class="title">Constro International Exhibition 2025</h2>
+						<span class="position">Exhibitor</span>
+					</div>
 				</div>
-				<div class="activity-box ftco-animate text-center">
-					<img src="images/cesa_logo.png" alt="CESA Logo" class="activity-logo">
-					<h2>Civil Engineering Student Association (CESA)</h2>
-					<span class="position">Cell Representative</span>
+				<div class="card ftco-animate">
+					<div class="card-info">
+						<img src="images/cesa_logo.png" alt="CESA Logo" class="activity-logo mb-3">
+						<h2 class="title">Civil Engineering Student Association</h2>
+						<span class="position">Cell Representative</span>
+					</div>
 				</div>
-				<div class="activity-box ftco-animate text-center">
-					<img src="images/cec_logo.png" alt="CEC Logo" class="activity-logo">
-					<h2>Competitive Examination Cell (CEC)</h2>
-					<span class="position">Department Head</span>
+				<div class="card ftco-animate">
+					<div class="card-info">
+						<img src="images/cec_logo.png" alt="CEC Logo" class="activity-logo mb-3">
+						<h2 class="title">Competitive Examination Cell (CEC)</h2>
+						<span class="position">Department Head</span>
+					</div>
 				</div>
 			</div>
 			<br>
@@ -522,23 +980,21 @@
 			<div class="underline"></div>
 		</div>
 		<br>
-		<div class="row d-flex align-items-stretch"> <div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry"> <a class="block-20 zoom-effect" style="background-image: url('images/lwd_project.png');">
+		<div class="activities-container d-flex flex-wrap justify-content-center row d-flex align-items-stretch">
+			<div class="card ftco-animate col-md-4 d-flex">
+				<div class="card-info">
+					<a class="block-20 zoom-effect" style="background-image: url('images/LWD.jpg'); height: 260px; background-size: contain; background-repeat: no-repeat; background-position: center;">
 					</a>
-					<div class="text mt-3 float-right d-block">
-						<h3 class="heading"><a>Light Weight Deflectometer (LWD) for Bitumen Road Testing</a></h3>
-						<p>Designed a portable device to test the deflection of road surfaces and assess the quality of construction materials.</p>
-					</div>
+					<h3 class="heading mt-3" style="font-size: 1.1rem; color: black;"><a>Light Weight Deflectometer (LWD) for Bitumen Road Testing</a></h3>
+					<p style="font-size: 0.8rem; color: black;">Designed a portable device to test the deflection of road surfaces and assess the quality of construction materials.</p>
 				</div>
 			</div>
-
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry"> <a class="block-20 zoom-effect" style="background-image: url('images/ML_project.jpg');">
+			<div class="card ftco-animate col-md-4 d-flex">
+				<div class="card-info">
+					<a class="block-20 zoom-effect" style="background-image: url('images/ML_project.jpg'); height: 260px; background-size: contain; background-repeat: no-repeat; background-position: center;">
 					</a>
-					<div class="text mt-3 float-right d-block">
-						<h3 class="heading"><a>Flexural Strength Prediction of SFRC using Machine Learning</a></h3>
-						<p>Developed a machine learning model to predict the flexural strength of SFRC based on various material properties, optimizing concrete mix designs.</p>
-					</div>
+					<h3 class="heading mt-3" style="font-size: 1.1rem; color: black;"><a>Flexural Strength Prediction of SFRC using Machine Learning</a></h3>
+					<p style="font-size: 0.8rem; color: black;">Developed a machine learning model to predict the flexural strength of SFRC to optimize concrete mix designs.</p>
 				</div>
 			</div>
 		</div>
@@ -551,32 +1007,32 @@
 			<div class="container">
 			  <div class="row d-md-flex align-items-center">
 				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
+				  <div class="block-18 resume-wrap">
+					<div>
 					  <strong class="number" data-number="5">0</strong>
 					  <span>Achievements</span>
 					</div>
 				  </div>
 				</div>
 				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
+				  <div class="block-18 resume-wrap">
+					<div>
 					  <strong class="number" data-number="3">0</strong>
 					  <span>Projects</span>
 					</div>
 				  </div>
 				</div>
 				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
+				  <div class="block-18 resume-wrap">
+					<div>
 					  <strong class="number" data-number="12">0</strong>
 					  <span>Events Participated</span>
 					</div>
 				  </div>
 				</div>
 				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				  <div class="block-18">
-					<div class="text">
+				  <div class="block-18 resume-wrap">
+					<div>
 					  <strong class="number" data-number="30">0</strong>
 					  <span>Cups of Coffee</span>
 					</div>
@@ -591,7 +1047,7 @@
 				  <div class="col-md-7 ftco-animate text-center">
 					<!--<h2>Check out my engineering projects. Reach out to me by email for more details.<span> Github</span></h2>-->
 					<div class="heading">
-					  <h4>Check out my engineering projects. Reach out to me by email for more details.</h4>
+					  <h4>Reach out to me by email for more details.</h4>
 					  <br>
 					  <p><a href="mailto:shravanwable1@gmail.com" class="btn btn-primary py-3 px-5">Email</a></p>
 					</div>
@@ -652,30 +1108,37 @@
 	          </div>
           </div>
 		  
-		  <div class="container">
+		<div class="container"></div>
 			<br>
 			<br>
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>Have a<span> Question?  </span> </div>
+			<div class="container">
+				<br>
+				<br>
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>Have a<span> Question?  </span> </h2>
+					</div>
+				</div>
 			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/shravanwable?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><span class="icon-linkedin"></span></a></li>  
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li> -->
-					  <li class="ftco-animate"><a href="https://www.facebook.com/shravan.wable.526"><span class="icon-facebook"></span></a></li>
-				      <!-- <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li> -->
-					</ul>
-				<br>
-		   </div>
-   </div>
+			<br>
+			<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0" style="background: none;">
+				<li class="ftco-animate normal-txt" style="background: none;">Find me on  </li>
+				<li class="ftco-animate" style="background: none; position: relative;">
+					<span style="position: absolute; top: 50%; left: 50%; width: 48px; height: 48px; background: linear-gradient(45deg, #ffbd39, #ff0080); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; opacity: 0.2;"></span>
+					<a href="https://www.linkedin.com/in/shravanwable?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" style="background: none; -webkit-background-clip: initial; -webkit-text-fill-color: initial; color: #ffbd39; position: relative; z-index: 1;">
+						<span class="icon-linkedin"></span>
+					</a>
+				</li>  
+				<li class="ftco-animate" style="background: none; position: relative;"></li>
+					<span style="position: absolute; top: 50%; left: 50%; width: 48px; height: 48px; background: linear-gradient(45deg, #ffbd39, #ff0080); border-radius: 50%; transform: translate(-50%, -50%); z-index: 0; opacity: 0.2;"></span>
+					<a href="https://www.facebook.com/shravan.wable.526" style="background: none; -webkit-background-clip: initial; -webkit-text-fill-color: initial; color: #ffbd39; position: relative; z-index: 1;"></a>
+						<span class="icon-facebook"></span>
+					</a>
+				</li>
+			</ul>
+			<br>
+		</div>
  </section>
-
-
- 
-	
     <footer class="ftco-footer ftco-section">
 		<div class="container">
 		  <div class="row">

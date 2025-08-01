@@ -10847,12 +10847,40 @@ textarea.form-control {
   display: block;
   width: 100%;
   text-align: center;
-  background: #191919;
+  /* Updated background to gradient similar to certifications */
+  background: linear-gradient(to left, #ffbd39 0%, #ff0080 100%);
   padding: 30px 20px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px; }
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ftco-counter .block-18::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.8);
+  filter: blur(25px);
+  background: linear-gradient(to left, #ffbd39 0%, #ff0080 100%);
+  transition: opacity 0.5s ease;
+}
+
+.ftco-counter .block-18:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 189, 57, 0.6);
+  opacity: 1;
+}
 
 .ftco-counter .text strong.number {
   font-weight: 700;
@@ -11324,8 +11352,13 @@ h3 {
   gap: 20px;
 }
 
-.membership-box {
-  background: rgba(255, 255, 255, 0.1); /* Match certifications */
+/* Remove specific card styles for memberships to use certification-box styles */
+.membership-container .card {
+  all: unset;
+}
+
+.membership-container .certification-box {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   min-height: 320px;
@@ -11335,36 +11368,42 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px 20px 20px;
+  padding: 20px;
   margin-bottom: 30px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.membership-box:hover {
+.membership-container .certification-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.membership-box img {
-  max-width: 100px;
-  max-height: 100px;
-  margin-bottom: 15px;
-}
-
-.membership-box h2 {
-  font-size: 1.2rem;
+.membership-container .certification-logo {
+  max-width: 70%;
+  height: auto;
   margin-bottom: 10px;
 }
 
-.membership-box .position {
-  color: #ffbd39; /* Website's yellow color */
+.membership-container .card-info h2.title {
+  font-size: 20px;
   font-weight: bold;
-  font-size: 1.1rem;
+  min-height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.membership-container .card-info .position {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #666;
 }
 
 @media (max-width: 767.98px) {
-  .membership-box {
+  .membership-container .certification-box {
     min-height: 250px;
     padding: 20px 10px 10px 10px;
   }
@@ -11424,9 +11463,28 @@ h3 {
 }
 
 .activity-logo {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
   margin-bottom: 15px;
+}
+
+/* Increase size of counters in #section-counter */
+.ftco-counter .text strong.number {
+  font-size: 48px;
+}
+
+.ftco-counter .block-18 {
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ftco-counter .block-18:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 .activity-box h2 {
@@ -11446,5 +11504,3 @@ h3 {
     padding: 20px 10px 10px 10px;
   }
 }
-
-
